@@ -7,6 +7,13 @@ It boots a throwaway VM from a cloud image, runs a build script inside it
 over SSH, and supports verifying the result by executing the lab against a
 real target rather than reviewing it statically.
 
+## Why this exists
+
+Authoring a lab and verifying it actually works are different jobs, and
+the second one keeps getting skipped. I kept rebuilding the same
+VM-boot-and-test scaffolding by hand for each lab, so I pulled it into a
+reusable tool instead of writing it fresh every time.
+
 ## Scope
 
 - Boot and destroy disposable Ubuntu guests (qcow2 overlay + cloud-init).
