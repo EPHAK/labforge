@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+dist/
+build/
+.labforge/
+*.qcow2
+*.iso
+console.log
+qemu.log
+qemu.pid

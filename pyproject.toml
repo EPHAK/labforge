@@ -1,0 +1,17 @@
+[project]
+name = "labforge"
+version = "0.1.0"
+description = "Build and verify vulnerable-VM security training labs on disposable KVM guests"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "paramiko>=3.0",
+]
+
+[project.scripts]
+labforge = "labforge.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
