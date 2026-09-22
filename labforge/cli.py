@@ -1,6 +1,6 @@
 """Command line entry point: python -m labforge <command> ...
 
-Kept intentionally simple — this wraps the library functions in vm.py,
+Kept intentionally simple: this wraps the library functions in vm.py,
 remote.py, capture.py, render.py and docs.py rather than adding its own
 logic.
 """
@@ -27,7 +27,7 @@ def _guest(name: str, root: Path, port: int, user: str, password: str) -> vm.Gue
 def cmd_up(args: argparse.Namespace) -> int:
     guest = vm.up(args.name, args.root, ssh_port=args.port,
                    user=args.user, password=args.password, size=args.size)
-    print(f"guest {guest.name} up — ssh {guest.user}@127.0.0.1 -p {guest.ssh_port}")
+    print(f"guest {guest.name} up: ssh {guest.user}@127.0.0.1 -p {guest.ssh_port}")
     return 0
 
 

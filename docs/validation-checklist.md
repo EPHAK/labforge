@@ -1,7 +1,7 @@
 # Validation checklist
 
 Run before a lab is considered done. Every item requires actually running
-something on a real guest — none of these are satisfied by reading code
+something on a real guest; none of these are satisfied by reading code
 or config.
 
 ## Build
@@ -10,7 +10,7 @@ or config.
       with no manual fix applied outside the documented steps.
 - [ ] Every command in the build guide exits successfully; failures aren't
       swallowed or worked around silently.
-- [ ] Package/dependency lists are complete — nothing installed by hand
+- [ ] Package/dependency lists are complete; nothing installed by hand
       during testing that isn't also in the documented install step.
 - [ ] Ordering dependencies are correct: nothing in an early step relies
       on something a later step installs or creates.
@@ -32,10 +32,10 @@ or config.
 
 - [ ] Run twice in a row without resetting the target between runs. The
       second run only passes if its own attack triggered its own
-      detection — not because of state left over from the first run.
+      detection, not because of state left over from the first run.
 - [ ] Run from the exact archive that will be submitted or shipped, not
       from a working copy that may have diverged.
-- [ ] Failure paths are checked, not just the success path — deliberately
+- [ ] Failure paths are checked, not just the success path; deliberately
       break one precondition (stop the detection service, remove a
       dependency) and confirm the validator reports the correct cause.
 
@@ -45,7 +45,7 @@ or config.
       without performing the intended exploit or investigation. It should
       fail.
 - [ ] Every artifact left behind by the build or validation process is
-      checked for permissions and content — nothing usable as a bypass is
+      checked for permissions and content; nothing usable as a bypass is
       present in the shipped state.
 - [ ] If build/validation tooling can itself trigger the vulnerable
       condition, confirm the order of operations before snapshotting
@@ -66,7 +66,7 @@ or config.
 ## Packaging
 
 - [ ] The archive that will actually be submitted is extracted fresh and
-      tested — not a working directory that happens to match it.
+      tested, not a working directory that happens to match it.
 - [ ] Archive paths use forward slashes regardless of the platform used to
       build it.
 - [ ] The archive layout matches the target platform's own reference

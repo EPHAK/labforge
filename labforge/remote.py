@@ -51,8 +51,8 @@ def run(ssh: paramiko.SSHClient, command: str, timeout: float = 120,
         check: bool = False) -> Result:
     """Run one command.
 
-    `timeout` is a hard cap. A command that opens an interactive shell —
-    a setuid shell obtained during validation, for example — never sends
+    `timeout` is a hard cap. A command that opens an interactive shell
+    (a setuid shell obtained during validation, for example) never sends
     EOF, so without the cap this blocks forever.
     """
     chan = ssh.get_transport().open_session()
